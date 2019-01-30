@@ -38,25 +38,8 @@ function decreaseBuy() {
       document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
     }
   }
-  if (icecreamBuy.toFixed(2) < 0.01) {
-    if(0 < icecreamBuy.toFixed(2)) {
-     document.getElementById("decreaseBuy").classList.add("locked")
-      document.getElementById("maxBuy").classList.add("open") 
-    }
-  }
   document.getElementById("icecream").innerHTML = "you have " + format(icecream) + " icecream!"
   document.getElementById("currency").innerHTML = "you have $" + format(money)
-}
-function MaxBuy() {
-  if (icecream > Buycost.toFixed(0)*1000000) {
-    if (icecreamBuy <= 0.01) {
-    icecream -= Buycost.toFixed(0)*1000000
-    icecreamBuy = 0
-    document.getElementById("maxBuy").classList.remove("open")
-    }
-  }
-  document.getElementById("icecream").innerHTML = "you have " + format(icecream.toFixed(0)) + " icecream!"
-  document.getElementById("currency").innerHTML = "you have $" + format(money.toFixed(2))
 }
 function increaseSell() {
   if (money >= Sellcost.toFixed(0)) {
