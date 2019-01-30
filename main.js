@@ -34,7 +34,7 @@ function decreaseBuy() {
     if (icecream >= Buycost.toFixed(0)) {
       icecream -= Buycost.toFixed(0)
       Buycost *= 1.1
-      icecreamBuy -= icecreamBuy*0.05
+      icecreamBuy -= icecreamBuy*0.001
       document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
     }
   }
