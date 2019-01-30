@@ -22,7 +22,7 @@ function makeIcecream() {
   document.getElementById("currency").innerHTML = "you have $" + format(money)
 }
 function sellIcecream() {
-  if (icecream >= icecreamSell.toFixed(0)*multiplier){
+  if (icecream >= multiplier){
     icecream -= 1*multiplier
     money += icecreamSell*multiplier
   }
