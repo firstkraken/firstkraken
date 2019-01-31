@@ -5,12 +5,15 @@
 }
 #Multiplier{
   text-align: right;
+  size: 2em;
 }
 #plusMultiplier{
   text-align: right;
+  size: 2em;
 }
 #minusMultiplier{
   text-align: right;
+  size: 2em;
 }
 #icecream {
   font-size: 3em;
