@@ -5,9 +5,11 @@ icecreamBuy = .5
 icecreamSell = 1
 Sellcost = 50
 multiplier = 1
+power = 0
+mantissa = 0
 function format(amount) {
-  let power = Math.floor(Math.log10(amount))
-  let mantissa = amount / Math.pow(10, power)
+  power = Math.floor(Math.log10(amount))
+  mantissa = amount / Math.pow(10, power)
   if (power < 3) return amount.toFixed(2)
   return mantissa.toFixed(2) + "e" + power
 }
@@ -28,11 +30,13 @@ function sellIcecream() {
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function decreaseBuy() {
-  if (icecream >= Buycost.toFixed(0)) {
-    icecream -= Buycost.toFixed(0)
-    Buycost *= 1.1
-    icecreamBuy -= icecreamBuy*0.01
-    document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
+  if (icecreamBuy > 0.01) {
+    if (icecream >= Buycost.toFixed(0)) {
+      icecream -= Buycost.toFixed(0)
+      Buycost *= 1.1
+      icecreamBuy -= icecreamBuy*0.01
+      document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
+    }
   }
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
