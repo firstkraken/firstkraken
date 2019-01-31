@@ -18,16 +18,16 @@ function makeIcecream() {
     icecream += 1*multiplier
     money -= icecreamBuy.toFixed(2)*multiplier
   }
-  document.getElementById("icecream").innerHTML = "you have " + format(icecream) + " icecream!"
-  document.getElementById("currency").innerHTML = "you have $" + format(money)
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function sellIcecream() {
   if (icecream >= multiplier){
     icecream -= 1*multiplier
     money += icecreamSell*multiplier
   }
-  document.getElementById("icecream").innerHTML = "you have " + format(icecream) + " icecream!"
-  document.getElementById("currency").innerHTML = "you have $" + format(money)
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function decreaseBuy() {
   if (icecream >= Buycost.toFixed(0)) {
@@ -36,8 +36,8 @@ function decreaseBuy() {
     icecreamBuy -= icecreamBuy*0.001
     document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
   }
-  document.getElementById("icecream").innerHTML = "you have " + format(icecream) + " icecream!"
-  document.getElementById("currency").innerHTML = "you have $" + format(money)
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function increaseSell() {
   if (money >= Sellcost.toFixed(0)) {
@@ -46,8 +46,8 @@ function increaseSell() {
     icecreamSell += 0.1
     document.getElementById("Sellcost").innerHTML = "cost: $" + format(Sellcost)
   }
-  document.getElementById("icecream").innerHTML = "you have " + format(icecream) + " icecream!"
-  document.getElementById("currency").innerHTML = "you have $" + format(money)
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function plusMultiplier() {
   multiplier = multiplier*10
