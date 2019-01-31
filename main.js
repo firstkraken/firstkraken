@@ -18,7 +18,7 @@ function makeIcecream() {
     icecream += 1*multiplier
     money -= icecreamBuy.toFixed(2)*multiplier
   }
-  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " Icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function sellIcecream() {
@@ -26,7 +26,7 @@ function sellIcecream() {
     icecream -= 1*multiplier
     money += icecreamSell*multiplier
   }
-  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " Icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function decreaseBuy() {
@@ -36,7 +36,7 @@ function decreaseBuy() {
     icecreamBuy -= icecreamBuy*0.001
     document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
   }
-  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " Icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function increaseSell() {
@@ -46,7 +46,7 @@ function increaseSell() {
     icecreamSell += 0.1
     document.getElementById("Sellcost").innerHTML = "cost: $" + format(Sellcost)
   }
-  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
+  document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " Icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function plusMultiplier() {
