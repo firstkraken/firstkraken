@@ -8,7 +8,7 @@ multiplier = 1
 power = 0
 mantissa = 0
 function format(amount) {
-  power = Math.floor(Math.log10(amount)) - 1
+  power = Math.floor(Math.log10(amount))
   mantissa = amount / Math.pow(10, power)
   if (power < 3) return amount.toFixed(2)
   return mantissa.toFixed(2) + "e" + power
