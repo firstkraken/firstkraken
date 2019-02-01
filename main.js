@@ -30,13 +30,11 @@ function sellIcecream() {
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function decreaseBuy() {
-  if (icecreamBuy > 0.01) {
-    if (icecream >= Buycost.toFixed(0)) {
-      icecream -= Buycost.toFixed(0)
-      Buycost *= 1.1
-      icecreamBuy -= icecreamBuy*0.01
-      document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
-    }
+  if (icecream >= Buycost.toFixed(0)) {
+    icecream -= Buycost.toFixed(0)
+    Buycost *= 1.1
+    icecreamBuy -= icecreamBuy*0.01
+    document.getElementById("Buycost").innerHTML = "cost " + format(Buycost) + " Icecream"
   }
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
