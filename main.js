@@ -47,7 +47,7 @@ function increaseSell() {
   if (money >= Sellcost.toFixed(0)) {
     money -= Sellcost.toFixed(0)
     Sellcost *= 2
-    icecreamSell += 0.1
+    icecreamSell += 2**(carrers + 1)/20
     document.getElementById("Sellcost").innerHTML = "cost: $" + format(Sellcost)
   }
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
@@ -85,7 +85,7 @@ function newCarrer() {
       power = 0
       mantissa = 0
       carrers += 1
-      icecreamSell += carrers
+      icecreamSell *= 2**carrers
       document.getElementById("carrer").classList.remove('open')
       document.getElementById("Buycost").innerHTML = "cost: " + format(Buycost) + " Icecream"
       document.getElementById("Sellcost").innerHTML = "cost: $" + format(Sellcost)
