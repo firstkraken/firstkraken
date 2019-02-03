@@ -5,16 +5,16 @@
 }
 #Multiplier{
   text-align: right;
-  size: 2em;
+  font-size: 30px;
 }
 #plusMultiplier{
   text-align: right;
-  size: 2em;
+  font-size: 20px;
   cursor: pointer;
 }
 #minusMultiplier{
   text-align: right;
-  size: 2em;
+  font-size: 20px;
   cursor: pointer;
 }
 #icecream {
@@ -65,4 +65,14 @@
   text-align: center;
   cursor: pointer; 
   opacity: 1;
+}
+#Max{
+  font-size: 30px;
+  text-align: right;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#MaxOnOff{
+  font-size: 20px;
+  text-align: right;
 }
