@@ -8,6 +8,8 @@ multiplier = 1
 power = 0
 mantissa = 0
 carrers = 0
+Max = false
+MaxX = 0
 var lastUpdate = Date.now()
 function format(amount) {
   power = Math.floor(Math.log10(amount))
@@ -16,15 +18,24 @@ function format(amount) {
   return mantissa.toFixed(2) + "e" + power
 }
 function makeIcecream() {
-  if (money >= icecreamBuy.toFixed(2)*multiplier) {
-    icecream += 1*multiplier
-    money -= icecreamBuy.toFixed(2)*multiplier
-  }
+  if (Max == true){
+    MaxX = Math.floor(money/icecreamBuy)
+    money -= MaxX*icecreamBuy
+    icecream += MaxX
+  }else;
+    if (money >= icecreamBuy.toFixed(2)*multiplier) {
+      icecream += 1*multiplier
+      money -= icecreamBuy.toFixed(2)*multiplier
+    }
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function sellIcecream() {
-  if (icecream >= multiplier){
+  if (Max == true){
+    MaxX = icecream
+    money += MaxX*icecreamSell
+    icecream -= icecream
+  } else if (icecream >= multiplier){
     icecream -= 1*multiplier
     money += icecreamSell*multiplier
   }
@@ -32,13 +43,11 @@ function sellIcecream() {
   document.getElementById("currency").innerHTML = "You have $" + format(money)
 }
 function decreaseBuy() {
-  if (icecreamBuy > 0.01) {
-    if (icecream >= Buycost.toFixed(0)) {
-      icecream -= Buycost.toFixed(0)
-      Buycost *= 10
-      icecreamBuy -= icecreamBuy*0.01
-      document.getElementById("Buycost").innerHTML = "cost: " + format(Buycost) + " Icecream"
-    }
+  if (icecream >= Buycost.toFixed(0)) {
+    icecream -= Buycost.toFixed(0)
+    Buycost *= 10
+    icecreamBuy -= icecreamBuy*0.01
+    document.getElementById("Buycost").innerHTML = "cost: " + format(Buycost) + " Icecream"
   }
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
   document.getElementById("currency").innerHTML = "You have $" + format(money)
@@ -62,6 +71,15 @@ function minusMultiplier() {
     multiplier = multiplier/10
   }
   document.getElementById("Multiplier").innerHTML = "Multiplier" + format(multiplier) +"x"
+}
+function Buyall(){
+  if (Max == true){
+    Max = false 
+    document.getElementById("MaxOnOff").innerHTML = "OFF"
+  } else if (Max == false) {
+      Max = true
+      document.getElementById("MaxOnOff").innerHTML = "ON"
+  }
 }
 function update(){
   document.getElementById("icecream").innerHTML = "You have " + format(icecream) + " icecream!"
